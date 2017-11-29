@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="YeWeiZheng's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="创建github repository(仓库)登录githubgithub的官方网址：https://github.com ，如果没有账号，赶紧注册一个。 创建repository(仓库)为啥要叫repository(仓库)？我起初也纳闷，叫代码库不更简单明了么？ 但仔细一琢磨，仓库一般都是放粮食的吧，这是把代码当作饱">
+<meta name="keywords" content="叶为正的博客,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github从入门到放弃，使用git上传本地项目">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/github从入门到放弃，使用git上传本地项目/index.html">
+<meta property="og:site_name" content="YeWeiZheng&#39;s blog">
+<meta property="og:description" content="创建github repository(仓库)登录githubgithub的官方网址：https://github.com ，如果没有账号，赶紧注册一个。 创建repository(仓库)为啥要叫repository(仓库)？我起初也纳闷，叫代码库不更简单明了么？ 但仔细一琢磨，仓库一般都是放粮食的吧，这是把代码当作饱腹之物，多有爱，瞬间觉得这冰冷冷的代码充满了查克拉。扯远了，来看怎么创建仓库，登">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/gbU7CvX.png">
+<meta property="og:image" content="https://i.imgur.com/rzM4oJe.png">
+<meta property="og:image" content="https://i.imgur.com/jwRSXu2.png">
+<meta property="og:image" content="https://i.imgur.com/Oz47uPu.png">
+<meta property="og:image" content="https://i.imgur.com/HaekgUg.png">
+<meta property="og:image" content="https://i.imgur.com/600Ftaq.png">
+<meta property="og:image" content="https://i.imgur.com/f25pAmd.png">
+<meta property="og:image" content="https://i.imgur.com/bUT2w2z.png">
+<meta property="og:image" content="https://i.imgur.com/x7Xxuax.png">
+<meta property="og:image" content="https://i.imgur.com/7z4V9DB.png">
+<meta property="og:image" content="https://i.imgur.com/PTMZGvw.png">
+<meta property="og:image" content="https://i.imgur.com/09wKa5E.png">
+<meta property="og:image" content="https://i.imgur.com/M6oSN8Z.png">
+<meta property="og:image" content="https://i.imgur.com/r0dc2QG.png">
+<meta property="og:image" content="https://i.imgur.com/lza0Kya.png">
+<meta property="og:image" content="https://i.imgur.com/gmT4Lbw.png">
+<meta property="og:image" content="https://i.imgur.com/Naq5AA3.png">
+<meta property="og:updated_time" content="2017-09-02T03:13:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="github从入门到放弃，使用git上传本地项目">
+<meta name="twitter:description" content="创建github repository(仓库)登录githubgithub的官方网址：https://github.com ，如果没有账号，赶紧注册一个。 创建repository(仓库)为啥要叫repository(仓库)？我起初也纳闷，叫代码库不更简单明了么？ 但仔细一琢磨，仓库一般都是放粮食的吧，这是把代码当作饱腹之物，多有爱，瞬间觉得这冰冷冷的代码充满了查克拉。扯远了，来看怎么创建仓库，登">
+<meta name="twitter:image" content="https://i.imgur.com/gbU7CvX.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/github从入门到放弃，使用git上传本地项目/"/>
+
+
+
+
+
+  <title>github从入门到放弃，使用git上传本地项目 | YeWeiZheng's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YeWeiZheng's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">胆小认生，不易相处</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/github从入门到放弃，使用git上传本地项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YeWeiZheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YeWeiZheng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">github从入门到放弃，使用git上传本地项目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T11:23:23+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="创建github-repository-仓库"><a href="#创建github-repository-仓库" class="headerlink" title="创建github repository(仓库)"></a>创建github repository(仓库)</h1><h2 id="登录github"><a href="#登录github" class="headerlink" title="登录github"></a>登录github</h2><p>github的官方网址：<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> ，如果没有账号，赶紧注册一个。</p>
+<h2 id="创建repository-仓库"><a href="#创建repository-仓库" class="headerlink" title="创建repository(仓库)"></a>创建repository(仓库)</h2><p>为啥要叫repository(仓库)？我起初也纳闷，叫代码库不更简单明了么？ 但仔细一琢磨，仓库一般都是放粮食的吧，这是把代码当作饱腹之物，多有爱，瞬间觉得这冰冷冷的代码充满了查克拉。<br>扯远了，来看怎么创建仓库，登录后可以看到有repository选项卡<br><img src="https://i.imgur.com/gbU7CvX.png" alt=""><br>如果没在这个页面也没关系，点击右上角的头像旁边的小三角，展开后可以看到Your profile，点击进入后也能看到repository<br>然后新建一个仓库<br><img src="https://i.imgur.com/rzM4oJe.png" alt=""><br>创建成功后，可以看到自己的仓库地址，如此，我的远程免费的仓库就创建了。它还介绍了github仓库的常用指令。这个指令需要在本地安装git客户端。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　git init //把这个目录变成Git可以管理的仓库</span><br><span class="line">　　git add README.md //文件添加到仓库</span><br><span class="line">　　git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了 </span><br><span class="line">　　git commit -m &quot;first commit&quot; //把文件提交到仓库</span><br><span class="line">　　git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库</span><br><span class="line">　　git push -u origin master //把本地库的所有内容推送到远程库上</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装git客户端"><a href="#安装git客户端" class="headerlink" title="安装git客户端"></a>安装git客户端</h1><h2 id="下载git客户端"><a href="#下载git客户端" class="headerlink" title="下载git客户端"></a>下载git客户端</h2><p>官方下载地址：<a href="http://git-scm.com/download/" target="_blank" rel="noopener">http://git-scm.com/download/</a>  根据你自己的系统 下载对应版本,全部默认配置安装，下一步即可</p>
+<h2 id="绑定用户"><a href="#绑定用户" class="headerlink" title="绑定用户"></a>绑定用户</h2><p>打开git-bash.exe，在桌面快捷方式/开始菜单/安装目录中<br>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识，用户和邮箱为你github注册的账号和邮箱<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;bkhacker&quot;</span><br><span class="line">git config --global user.email &quot;550560813@qq.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://i.imgur.com/jwRSXu2.png" alt=""><br>ps：git config  –global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
+<h1 id="为Github账户设置SSH-key"><a href="#为Github账户设置SSH-key" class="headerlink" title="为Github账户设置SSH key"></a>为Github账户设置SSH key</h1><p>众所周知ssh key是加密传输。</p>
+<p>加密传输的算法有好多，git使用rsa，rsa要解决的一个核心问题是，如何使用一对特定的数字，使其中一个数字可以用来加密，而另外一个数字可以用来解密。这两个数字就是你在使用git和github的时候所遇到的public key也就是公钥以及private key私钥。</p>
+<p>其中，公钥就是那个用来加密的数字，这也就是为什么你在本机生成了公钥之后，要上传到github的原因。从github发回来的，用那公钥加密过的数据，可以用你本地的私钥来还原。</p>
+<p>如果你的key丢失了，不管是公钥还是私钥，丢失一个都不能用了，解决方法也很简单，重新再生成一次，然后在github.com里再设置一次就行</p>
+<h2 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h2><p>首先检查是否已生成密钥 cd ~/.ssh，ls如果有3个文件，则密钥已经生成，id_rsa.pub就是公钥<br><img src="https://i.imgur.com/Oz47uPu.png" alt=""><br>也可以打开我的电脑C:\Users\你电脑的用户名.ssh 里面找到<br><img src="https://i.imgur.com/HaekgUg.png" alt=""><br>如果没有生成，那么通过$ ssh-keygen -t rsa -C “6215048wjl@163.com”来生成。（改成自己的邮箱）</p>
+<p>1）是路径确认，直接按回车存默认路径即可</p>
+<p>2）直接回车键，这里我们不使用密码进行登录, 用密码太麻烦;</p>
+<p>3）直接回车键<br><img src="https://i.imgur.com/600Ftaq.png" alt=""><br>生成成功后，去对应目录C:\Users\specter.ssh里（specter为电脑用户名，每个人不同）用记事本打开id_rsa.pub，得到ssh key公钥<br><img src="https://i.imgur.com/f25pAmd.png" alt=""></p>
+<h2 id="为github账号配置ssh-key"><a href="#为github账号配置ssh-key" class="headerlink" title="为github账号配置ssh key"></a>为github账号配置ssh key</h2><p>切换到github，展开个人头像的小三角，点击settings<br>然后打开SSH keys菜单， 点击Add SSH key新增密钥，填上标题，跟仓库保持一致吧，好区分。</p>
+<p>接着将id_rsa.pub文件中key粘贴到此，最后Add key生成密钥吧。<br><img src="https://i.imgur.com/bUT2w2z.png" alt=""><br>如此，github账号的SSH keys配置完成。</p>
+<h1 id="上传本地项目到github"><a href="#上传本地项目到github" class="headerlink" title="上传本地项目到github"></a>上传本地项目到github</h1><h2 id="创建一个本地项目"><a href="#创建一个本地项目" class="headerlink" title="创建一个本地项目"></a>创建一个本地项目</h2><p>我这创建了几个空文件夹和一个文件及一个项目配置文件，好多前端项目都这样搭架构，我也追随潮流哈。</p>
+<h2 id="建立本地仓库"><a href="#建立本地仓库" class="headerlink" title="建立本地仓库"></a>建立本地仓库</h2><p>再来复习一下创建新仓库的指令：<br>　　git init //把这个目录变成Git可以管理的仓库<br>　　git add README.md //文件添加到仓库<br>　　git add . //不但可以跟单一文件，还可以跟通配符，更可以跟目录。一个点就把当前目录下所有未追踪的文件全部add了<br>　　git commit -m “first commit” //把文件提交到仓库<br>　　git remote add origin git@github.com:wangjiax9/practice.git //关联远程仓库<br>　　git push -u origin master //把本地库的所有内容推送到远程库上<br>首先，进入到beautifulDay项目目录，还记得创建仓库成功后的那个页面吧，指令都在呢。</p>
+<p>然后执行指令：git init<br><img src="https://i.imgur.com/x7Xxuax.png" alt=""><br>初始化成功后你会发现项目里多了一个隐藏文件夹.git</p>
+<p>这个目录是Git用来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。<br><img src="https://i.imgur.com/7z4V9DB.png" alt=""><br>接着，将所有文件添加到仓库</p>
+<p>执行指令：git add .<br><img src="https://i.imgur.com/PTMZGvw.png" alt=""><br>然后，把文件提交到仓库，双引号内是提交注释。</p>
+<p>执行指令：git commit -m “提交文件”<br><img src="https://i.imgur.com/09wKa5E.png" alt=""></p>
+<p>如此本地仓库建立好了。</p>
+<h2 id="关联github仓库"><a href="#关联github仓库" class="headerlink" title="关联github仓库"></a>关联github仓库</h2><p>到github beautifulDay仓库复制仓库地址<br><img src="https://i.imgur.com/M6oSN8Z.png" alt=""><br>然后执行指令：git remote add origin git@github.com:wangjiax9/beautifulDay.git<br><img src="https://i.imgur.com/r0dc2QG.png" alt=""></p>
+<h1 id="上传本地代码"><a href="#上传本地代码" class="headerlink" title="上传本地代码"></a>上传本地代码</h1><p>执行指令：git push -u origin master</p>
+<p>1）敲一个：yes， 然后回车<br><img src="https://i.imgur.com/lza0Kya.png" alt=""><br>到此，本地代码已经推送到github仓库了，我们现在去githubt仓库看看。</p>
+<p>咦！奇怪了，我的目录呢？这个坑突然冒出来是不是印象很深刻呢~</p>
+<p>注意咯：git是不能管理空的文件夹的，文件夹里必须有文件才能add<br>好，我们来试一下，我在examples里新建了一个test1.html文件<br><img src="https://i.imgur.com/gmT4Lbw.png" alt=""><br>执行指令添加文件-&gt;提交文件-&gt;推送文件</p>
+<p>git add .</p>
+<p>git commit -m “提交test1.html”</p>
+<p>git push -u origin master<br><img src="https://i.imgur.com/Naq5AA3.png" alt=""><br>然后刷新一个github，你会看到，examples文件夹出来了。<br>如果大家想要知道更多的git操作和知识，推荐去看看缪雪峰的git教程，讲得很详细。</p>
+<p>ps手记：<br>创建本地代码仓库<br>打开Git Bash<br>首先配置自己的身份，这样在提交代码的时候就能知道是谁提交的<br>输入git config –global user.name “名字”<br>git config –global user.email “邮箱地址”<br>然后开始创建代码仓库，这里以测试项目helloworld为例<br>输入git init就可以创建啦~<br>然后使用ls -al查询代码仓库，如果想删除这个仓库，直接从目录下删除这个文件夹就可以了..<br>提交本地代码<br>仓库建立完成之后就可以提交本地代码了，这里只需要用到两个命令，add添加和commit提交<br>add .是提交所有<br>add +文件名是提交单个文件<br>git commit -m “First commit”是提交这里要在-m参数后面加上提交参数，很重要哟，不然会被认为不合法不能提交.<br>创建GitHub账户以及托管本地代码<br>进入官网，点击Sign up for GitHub注册<br><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><br>接着点击New repository新建版本库，<br>点击create repository按钮，之后会显示你的版本库主页<br> 之后获取远程版本库的地址，非常重要<br>然后打开Gitbash<br>切换到helloworld工程目录下，把远程版本库克隆到本地<br>git clone <a href="https://github.com/bkhacker/generatorSqlmapCustom.git" target="_blank" rel="noopener">https://github.com/bkhacker/generatorSqlmapCustom.git</a><br>有时候会传输超时。。就再试几次。。<br>这个时候你的工程目录下会多出一个helloworld文件夹，把这个文件夹里的所有目录复制到上一层目录中，就能将整个工程添加到版本控制中去了<br>这里这里有个隐藏的.git文件，不要漏掉！！！<br>复制完之后可以删掉helloworld目录，之后ls -al查看工程目录<br>然后就是提交到Github上面的工作了！！！<br>先执行提交操作git commit，然后输入 git push origin master同步<br>注意这里要记得输入用户名和密码进行身份效验！！切记！不要以为它不动了。<br>输入密码的时候不会显示。。但是输完回车就行了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/通过ViewObject类构建视图/" rel="next" title="通过ViewObject类构建视图">
+                <i class="fa fa-chevron-left"></i> 通过ViewObject类构建视图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/MyBatis逆向工程自动生成映射文件/" rel="prev" title="MyBatis逆向工程自动生成映射文件">
+                MyBatis逆向工程自动生成映射文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="YeWeiZheng" />
+          <p class="site-author-name" itemprop="name">YeWeiZheng</p>
+           
+              <p class="site-description motion-element" itemprop="description">叶为正的博客,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建github-repository-仓库"><span class="nav-number">1.</span> <span class="nav-text">创建github repository(仓库)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录github"><span class="nav-number">1.1.</span> <span class="nav-text">登录github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建repository-仓库"><span class="nav-number">1.2.</span> <span class="nav-text">创建repository(仓库)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git客户端"><span class="nav-number">2.</span> <span class="nav-text">安装git客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载git客户端"><span class="nav-number">2.1.</span> <span class="nav-text">下载git客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定用户"><span class="nav-number">2.2.</span> <span class="nav-text">绑定用户</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为Github账户设置SSH-key"><span class="nav-number">3.</span> <span class="nav-text">为Github账户设置SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成ssh-key"><span class="nav-number">3.1.</span> <span class="nav-text">生成ssh key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为github账号配置ssh-key"><span class="nav-number">3.2.</span> <span class="nav-text">为github账号配置ssh key</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传本地项目到github"><span class="nav-number">4.</span> <span class="nav-text">上传本地项目到github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个本地项目"><span class="nav-number">4.1.</span> <span class="nav-text">创建一个本地项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立本地仓库"><span class="nav-number">4.2.</span> <span class="nav-text">建立本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联github仓库"><span class="nav-number">4.3.</span> <span class="nav-text">关联github仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传本地代码"><span class="nav-number">5.</span> <span class="nav-text">上传本地代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YeWeiZheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
