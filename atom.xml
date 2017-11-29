@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-29T16:01:04.000Z</updated>
+  <updated>2017-09-02T03:13:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,74 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>31.二叉树类型定义</title>
-    <link href="http://yoursite.com/2017/11/30/31.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89/"/>
-    <id>http://yoursite.com/2017/11/30/31.二叉树类型定义/</id>
-    <published>2017-11-30T04:37:14.000Z</published>
-    <updated>2017-11-29T16:01:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>31.二叉树类型定义</p><p>性质2:深度为k的二叉树至多有2^k-1个结点（k&gt;=1）。  </p><p>性质2推广：满二叉树第k层的结点个数比其1～k-1层所有的结点总数多1个。</p><p>性质3:对任何一颗二叉树，若它含有n0个叶子结点、n2个度为2的结点，则n0=n2+2</p><p> 证明：<br>设二叉树上结点总数n=n0+n1+n2</p><p>又二叉树上分支总数b=n1+2n2</p><p>而b=n-1=n0+n1+n2-1 </p><p>性质3推广：已知一颗度为m的树中有N1个度为1的结点，N2个度为2的结点，…Nm个度为m的结点，问树中有多少个叶子结点。</p><p>证明：设N为总结点数，N0为叶子结点数</p><p>-》N=N0+N1+N2+…+Nm</p><p>-》N-1=分支总数</p><p>-》N-1=N1<em>1+N2</em>2+….Nm*m</p><p>-》N0=1+N2+2N3+…+(m-1)Nm</p><p> ps:完全二叉树的叶子结点出现在第k层以及第k-1层</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;31.二叉树类型定义&lt;/p&gt;
-&lt;p&gt;性质2:深度为k的二叉树至多有2^k-1个结点（k&amp;gt;=1）。  &lt;/p&gt;
-&lt;p&gt;性质2推广：满二叉树第k层的结点个数比其1～k-1层所有的结点总数多1个。&lt;/p&gt;
-&lt;p&gt;性质3:对任何一颗二叉树，若它含有n0个叶子结点、n2个度为2
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2017/11/29/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
-    <id>http://yoursite.com/2017/11/29/最小生成树/</id>
-    <published>2017-11-29T15:43:16.000Z</published>
-    <updated>2017-09-07T16:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>带权图</p><p><img src="https://i.imgur.com/Ce6Tsal.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;带权图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Ce6Tsal.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>树和二叉树</title>
-    <link href="http://yoursite.com/2017/09/02/%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <id>http://yoursite.com/2017/09/02/树和二叉树/</id>
-    <published>2017-09-02T07:23:23.000Z</published>
-    <updated>2017-09-01T18:33:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h1><p>树（Tree）是n（n≥0）个结点的有限集，它或为空树（n=0）；或为非空树，对于非空树T：<br>（1）有且仅有一个根结点<br>（2）除跟结点外的其它节点可分为m个互不相交的有限集，其中每一个集合本身又是一颗树，并且称为根的子树（SubTree）。</p><h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p>根—即根结点(没有前驱)<br>叶子—即终端结点(没有后继)<br>森林——指m棵不相交的树的集合(例如删除A后的子树个数)<br>有序树——结点各子树从左至右有序，不能互换（左为第一）<br>无序树——结点各子树可互换位置。<br>双亲——即上层的那个结点(直接前驱)<br>孩子——即下层结点的子树的根(直接后继)<br>兄弟——同一双亲下的同层结点（孩子之间互称兄弟）<br>堂兄弟——即双亲位于同一层的结点（但并非同一双亲）<br>祖先——即从根到该结点所经分支的所有结点<br>子孙——即该结点下层子树中的任一结点</p><p>结点——即树的数据元素<br>结点的度——结点挂接的子树数<br>结点的层次——从根到该结点的层数（根结点算第一层）<br>终端结点——即度为0的结点，即叶子<br>分支结点——即度不为0的结点（也称为内部结点）<br>树的度——所有结点度中的最大值<br>树的深度——指所有结点中最大的层数<br>(或高度)</p><h1 id="二叉树的定义"><a href="#二叉树的定义" class="headerlink" title="二叉树的定义"></a>二叉树的定义</h1><p>二叉树（Binary Tree）是n（n≥0）个结点所构成的集合，它或为空树（n = 0）；或为非空树，对于非空树T：<br>（1）有且仅有一个称之为根的结点；<br>（2）除根结点以外的其余结点分为两个互不相交的子集T1和T2，分别称为T的左子树和右子树，且T1和T2本身又都是二叉树。</p><h2 id="二叉树基本特点"><a href="#二叉树基本特点" class="headerlink" title="二叉树基本特点"></a>二叉树基本特点</h2><p>结点的度小于等于2<br>有序树（子树有序，不能颠倒）</p><h1 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h1><p>性质1: 在二叉树的第i层上至多有2^(i-1)个结点<br>性质2: 深度为k的二叉树至多有2^k-1个结点<br>性质3: 对于任何一棵二叉树，若2度的结点数有n2个，则叶子数n0必定为n2＋1 （即n0=n2+1）<br>性质4: 具有n个结点的完全二叉树的深度必为[log2n]＋1<br>性质5: 对完全二叉树，若从上至下、从左至右编号，则编号为i 的结点，其左孩子编号必为2i，其右孩子编号必为2i＋1；其双亲的编号必为i/2。</p><h1 id="二叉树的顺序存储"><a href="#二叉树的顺序存储" class="headerlink" title="二叉树的顺序存储"></a>二叉树的顺序存储</h1><p>实现：按满二叉树的结点层次编号，依次存放二叉树中的数据元素。<br>特点：<br>结点间关系蕴含在其存储位置中<br>浪费空间，适于存满二叉树和完全二叉树</p><h1 id="二叉树的链式存储"><a href="#二叉树的链式存储" class="headerlink" title="二叉树的链式存储"></a>二叉树的链式存储</h1><p><img src="http://i.imgur.com/ugoh8r8.png" alt=""></p><h1 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct BiNode&#123;</span><br><span class="line">   TElemType   data;</span><br><span class="line">   struct  BiNode   *lchild,*rchild; //左右孩子指针</span><br><span class="line">&#125;BiNode,*BiTree;</span><br></pre></td></tr></table></figure><h1 id="三叉链表"><a href="#三叉链表" class="headerlink" title="三叉链表"></a>三叉链表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct TriTNode&#123;  </span><br><span class="line">   TelemType data;   </span><br><span class="line">   struct TriTNode *lchild,*parent,*rchild;</span><br><span class="line">&#125;TriTNode,*TriTree;</span><br></pre></td></tr></table></figure><h1 id="遍历二叉树和线索二叉树"><a href="#遍历二叉树和线索二叉树" class="headerlink" title="遍历二叉树和线索二叉树"></a>遍历二叉树和线索二叉树</h1><p><img src="http://i.imgur.com/X6y0ir6.png" alt=""><br>口诀：<br>DLR—先序遍历，即先根再左再右<br>LDR—中序遍历，即先左再根再右<br>LRD—后序遍历，即先左再右再根</p><h1 id="用二叉树表示算术表达式"><a href="#用二叉树表示算术表达式" class="headerlink" title="用二叉树表示算术表达式"></a>用二叉树表示算术表达式</h1><p><img src="http://i.imgur.com/UoHOaJ3.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;树的定义&quot;&gt;&lt;a href=&quot;#树的定义&quot; class=&quot;headerlink&quot; title=&quot;树的定义&quot;&gt;&lt;/a&gt;树的定义&lt;/h1&gt;&lt;p&gt;树（Tree）是n（n≥0）个结点的有限集，它或为空树（n=0）；或为非空树，对于非空树T：&lt;br&gt;（1）有且仅有一个根结点
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>MyBatis逆向工程自动生成映射文件</title>
