@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-23T09:38:56.000Z</updated>
+  <updated>2017-11-30T15:53:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,73 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>数据结构</title>
-    <link href="http://yoursite.com/2017/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2017/12/23/数据结构/</id>
-    <published>2017-12-23T07:23:23.000Z</published>
-    <updated>2017-12-23T09:38:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>衡量算法的标准：<br>1、时间复杂度<br>大概程序要执行的次数，而非执行时间<br>2.空间复杂度<br>算法执行过程中大概所占用的最大内存<br>3.难易程度<br>4.健壮性  </p><p>数据结构的地位：<br>是软件中最核心的课程<br>程序=数据的存储+数据的操作+可以被计算机执行的语言<br>指针：<br>A aa=new A（）；<br>A aa2=aa;<br>aa.f();  </p><p>预备知识：  </p><h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><p>指针的重要性：C语言的灵魂<br>定义：地址-》内存单元的编号<br>从0开始的非负整数<br>范围：0–FFFFFFFF【0-4G-1】<br>指针：指针就是地址 地址就是指针<br>指针变量是存放内容但愿地址的变量<br>指针的本质是一个操作受限的非负整数<br>分类：<br>1.基本类型的指针<br>2.指针和数组的关系  </p><h3 id="指针demo"><a href="#指针demo" class="headerlink" title="指针demo"></a>指针demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line"></span><br><span class="line">    int *p; //p是个指针变量，int *表示该p变量智能存储int类型变量的地址</span><br><span class="line">    int i = 10;</span><br><span class="line">    int j;</span><br><span class="line"></span><br><span class="line">    p = &amp;i;</span><br><span class="line">    *p=i;//等价于i=i,没实际意义</span><br><span class="line">    j=*p;//等价于j=i</span><br><span class="line">    printf(&quot;i=%d,j=%d,*p=%d\n&quot;, i,j,*p);</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="http://p084vne1c.bkt.clouddn.com/17-12-23/9548682.jpg" alt="">  </p><h4 id="如何通过被调函数修改主调函数中普通变量的值"><a href="#如何通过被调函数修改主调函数中普通变量的值" class="headerlink" title="如何通过被调函数修改主调函数中普通变量的值"></a>如何通过被调函数修改主调函数中普通变量的值</h4><p>1.实参为相关变量的地址<br>2.形参为以该变量的类型为类型的指针变量<br>3.在被调函数中通过*形参i，变量名的方式可以修改主调函数的变量  </p><h4 id="通过被调函数修改主调函数中普通变量的值demo"><a href="#通过被调函数修改主调函数中普通变量的值demo" class="headerlink" title="通过被调函数修改主调函数中普通变量的值demo"></a>通过被调函数修改主调函数中普通变量的值demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">//不是定义了一个名字叫做*i的形参，</span><br><span class="line">// 而是定义了一个形参，该形参名字叫做p，它的类型是int *</span><br><span class="line">void f(int * p)&#123;</span><br><span class="line">*p=100;//</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">int i=9;</span><br><span class="line">    f(&amp;i);</span><br><span class="line">    printf(&quot;%d\n&quot;, i);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="模块一：线性结构"><a href="#模块一：线性结构" class="headerlink" title="模块一：线性结构"></a>模块一：线性结构</h2><h4 id="连续存储【数组】"><a href="#连续存储【数组】" class="headerlink" title="连续存储【数组】"></a>连续存储【数组】</h4><p>一维数组名是个指针变量<br>它存放的是一维数组第一个元素的地址，它的值不能被改变<br>一维数组名指向的是数组的第一个元素<br>下标和指针的关系<br>a[i]   *(a+i)  </p><h3 id="指针运算demo"><a href="#指针运算demo" class="headerlink" title="指针运算demo"></a>指针运算demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line"></span><br><span class="line">    int a[5] = &#123;1, 2, 3, 4, 5&#125;;</span><br><span class="line">    a[3] == *(3 + a);</span><br><span class="line">    printf(&quot;%p\n&quot;, a + 1);</span><br><span class="line">    printf(&quot;%p\n&quot;, a + 2);</span><br><span class="line">    printf(&quot;%d\n&quot;, *a + 3);//*a+3等价a[0]+3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="通过传指针地址打印数组demo"><a href="#通过传指针地址打印数组demo" class="headerlink" title="通过传指针地址打印数组demo"></a>通过传指针地址打印数组demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void Show_Array(int *p, int len) &#123;</span><br><span class="line">    int i=0;</span><br><span class="line">    for (i = 0; i &lt; len; ++i) &#123;</span><br><span class="line">        printf(&quot;%d\n&quot;,p[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    //p[0] = -1;//p[0]==*p   p[2]=*(p+2)==*(a+2)==a[2]</span><br><span class="line">    //p[i]就是主函数的a[i]</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">    int a[5] = &#123;1, 2, 3, 4, 5&#125;;</span><br><span class="line">    Show_Array(a, 5);//a等价于&amp;a[0],&amp;a[0]本身就是int *类型</span><br><span class="line">    //printf(&quot;%d\n&quot;, a[0]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="double类型占8个字节demo"><a href="#double类型占8个字节demo" class="headerlink" title="double类型占8个字节demo"></a>double类型占8个字节demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">    double *p;</span><br><span class="line">    double x = 66.6;</span><br><span class="line"></span><br><span class="line">    p = &amp;x;//x占8个字节 1个字节是8位，1个字节是一个地址</span><br><span class="line"></span><br><span class="line">    double arr[3] = &#123;1.1, 2.2, 3.3&#125;;</span><br><span class="line">    double *q;</span><br><span class="line"></span><br><span class="line">    q = &amp;arr[0];</span><br><span class="line">    printf(&quot;%p\n&quot;, q);</span><br><span class="line">    q = &amp;arr[1];</span><br><span class="line">    printf(&quot;%p\n&quot;, q);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><p>所谓的结构体就是java中的类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Student&#123;</span><br><span class="line">    int id;</span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line">    void show()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p><p>结构体：  </p><pre><code>struct Student{     int id;    String name;    int age;}</code></pre><p>结构体是没有方法的类</p><h4 id="为什么会出现结构体"><a href="#为什么会出现结构体" class="headerlink" title="为什么会出现结构体"></a>为什么会出现结构体</h4><p>为了表示一些复杂的数据，而普通的基本类型变量无法满足要求  </p><p>什么叫结构体<br>结构体是用户根据实际需要自己定义的符合数据类型</p><p>如何使用结构体  </p><p>注意事项  </p><h4 id="动态内存的分配和释放"><a href="#动态内存的分配和释放" class="headerlink" title="动态内存的分配和释放"></a>动态内存的分配和释放</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;衡量算法的标准：&lt;br&gt;1、时间复杂度&lt;br&gt;大概程序要执行的次数，而非执行时间&lt;br&gt;2.空间复杂度&lt;br&gt;算法执行过程中大概所占用的最大内存&lt;br&gt;3.难易程度&lt;br&gt;4.健壮性  &lt;/p&gt;
-&lt;p&gt;数据结构的地位：&lt;br&gt;是软件中最核心的课程&lt;br&gt;程序=数据的存储+数
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>考研倒数365天</title>
-    <link href="http://yoursite.com/2017/12/22/%E8%80%83%E7%A0%94%E5%80%92%E6%95%B0365%E5%A4%A9/"/>
-    <id>http://yoursite.com/2017/12/22/考研倒数365天/</id>
-    <published>2017-12-22T14:23:23.000Z</published>
-    <updated>2017-12-22T13:29:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>上午：<br>恋恋有词 语法</p><p>下午：<br>数学导数-学长笔记-上限函数<br>导数搞定<br>求导之前<br>先标准化<br>能拆则拆<br>能换则换<br>换元换限。<br>分段点处的导数，一般用定义求导，-》不连续。-》中央补充定义</p><p>晚上：<br>做数学步骤：首先针对新知识点：刷课本例题和习题+带你学！切勿本末倒置。重视基础知识的学习！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;上午：&lt;br&gt;恋恋有词 语法&lt;/p&gt;
-&lt;p&gt;下午：&lt;br&gt;数学导数-学长笔记-上限函数&lt;br&gt;导数搞定&lt;br&gt;求导之前&lt;br&gt;先标准化&lt;br&gt;能拆则拆&lt;br&gt;能换则换&lt;br&gt;换元换限。&lt;br&gt;分段点处的导数，一般用定义求导，-》不连续。-》中央补充定义&lt;/p&gt;
-&lt;p&gt;晚上：
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>考研倒数364天</title>
-    <link href="http://yoursite.com/2017/12/22/%E5%80%92%E8%AE%A1%E6%97%B6364day/"/>
-    <id>http://yoursite.com/2017/12/22/倒计时364day/</id>
-    <published>2017-12-22T14:23:23.000Z</published>
-    <updated>2017-12-23T08:57:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>终于把恋恋有词刷到低频了。<br>数据结构与c语言：郝斌</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;终于把恋恋有词刷到低频了。&lt;br&gt;数据结构与c语言：郝斌&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>正方教务系统一键评教方法</title>
